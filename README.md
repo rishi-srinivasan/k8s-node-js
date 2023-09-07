@@ -4,6 +4,8 @@ Repository contains files from the personal project where a simple node js appli
 
 The simple nodejs web application is connected to another deployment of nginx server and communicates and is made available for public access through load balancer.
 
+reference: YT/@freeCodeCamp and @bstashchuk
+
 Architecture diagram:
 
 
