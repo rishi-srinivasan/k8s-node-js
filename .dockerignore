@@ -1,0 +1,5 @@
+# not necessary because of how dockerfile is created
+**/node_modules
+*.md
+Dockerfile
+*.dockerignore
