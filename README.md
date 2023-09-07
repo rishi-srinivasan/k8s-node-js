@@ -19,7 +19,8 @@ Steps to deploy:
 
 * minikube start --driver=docker
 * git clone git@github.com:rishi-srinivasan/k8s-node-js.git
-* kubectl apply -f deployment.yaml -f nginx.yaml
+* kubectl apply -f nginx.yaml -f k8s-nodejs-to-nginx.yaml
 * To verify deployment:
-  * kubectl exec pod-name -- nslookup nginx
-  * kubectl exec pod-name -- wget -qO- http://nginx
+  * kubectl exec pod-name -- nslookup nginx : Shows the cluster IP of nginx deployment
+  * kubectl exec pod-name -- wget -qO- http://nginx : Retreieves the nginx welcome page
+* kubectl delete all --all
