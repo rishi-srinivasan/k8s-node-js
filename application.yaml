@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-cd-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rishi-srinivasan/k8s-node-js.git
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+
+  # creates a namespace if the namespace given does not exist
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+  # automates syncing with the repository
+    automated:
+      selfHeal: true  #enables the automatic syncing
+      prune: true     #deletes all the components associated with service.yaml when the file is deleted
