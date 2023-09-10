@@ -5,9 +5,11 @@ metadata:
   namespace: argocd
 spec:
   project: default
+
   source:
     repoURL: https://github.com/rishi-srinivasan/k8s-node-js.git
     targetRevision: HEAD
+    path: k8s-nodejs-app
   destination:
     server: https://kubernetes.default.svc
 
